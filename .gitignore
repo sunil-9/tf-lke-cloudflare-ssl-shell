@@ -1,0 +1,12 @@
+*.terraform/
+*.tfstate 
+*.backup 
+*.hcl 
+*terraform-init 
+*config
+*.tfvars
+loadbalancer_ip
+*.tfstate.backup
+*.tfstate.*
+docker-sec.json
+

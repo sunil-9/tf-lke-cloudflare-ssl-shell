@@ -1,0 +1,12 @@
+grafana.ini:
+  default:
+    instance_name: my-server
+  auth.basic:
+    enabled: true
+  app:
+    kubernetes.io:
+      managed-by :Helm
+  meta:
+    helm.sh:
+      release-name :"grafana"
+      release-namespace = "monitoring"
