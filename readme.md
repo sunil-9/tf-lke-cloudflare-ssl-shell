@@ -18,15 +18,15 @@ docker run -it --rm  -v ${PWD}:/work -w /work  alpine sh
 
 **for `windows cmd`**
 ```
-docker run -it --rm -v "%cd%":/work -w /work ubuntu sh
+docker run -it --rm -v "%cd%":/work -w /work alpine sh
 ```
 ## Step 2: Install dependencies
 
 Since you are using Ubuntu, you need to install `curl` and `terraform`.
 
 ```
-apt-get update
-apt-get install -y curl terraform
+apk update
+apk add -y --no-cache curl terraform
 ```
 
 Note : if terraform didnot get installed your can install Terraform, following the official installation instructions for Ubuntu: https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started#install-terraform
