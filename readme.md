@@ -1,12 +1,44 @@
-# Steps to create your own server in linode.
+## Step 0: Clone the script and move to the folder
 
-## step 0: git clone https://github.com/sunil-9/terraform-with-shell.git && cd terraform-with-shell
+Clone the repository containing the necessary script and navigate to the appropriate directory.
 
-## step 1: docker run -it --rm -v ${HOME}:/root/ -v ${PWD}:/work -w /work --net host ubuntu sh
+```
+git clone https://github.com/sunil-9/terraform-with-shell.git
+cd terraform-with-shell
+```
 
-## step 2: apk add --no-cache curl
+## Step 1: Run the Docker image
 
-## step 3: apk add terraform --no-cache
+Run the Docker image with the code on the Docker machine, using the `-v` argument to mount volumes. Enter the Docker machine.
 
-## step 4: chmod +x install.sh
-## step 5: ./install.sh
+```
+docker run -it --rm -v ${HOME}:/root/ -v ${PWD}:/work -w /work --net host ubuntu sh
+```
+
+## Step 2: Install dependencies
+
+Since you are using Ubuntu, you need to install `curl` and `terraform`.
+
+```
+apt-get update
+apt-get install -y curl terraform
+```
+
+Note : if terraform didnot get installed your can install Terraform, following the official installation instructions for Ubuntu: https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started#install-terraform
+
+## Step 3: Give execution permission to the script
+
+Make the script executable by granting execution permission.
+
+```
+chmod +x install.sh
+```
+
+## Step 4: Run the script
+
+Execute the installation script.
+
+```
+./install.sh
+```
+
