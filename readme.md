@@ -11,10 +11,15 @@ cd terraform-with-shell
 
 Run the Docker image with the code on the Docker machine, using the `-v` argument to mount volumes. Enter the Docker machine.
 
+**for `linux`**
 ```
-docker run -it --rm -v ${HOME}:/root/ -v ${PWD}:/work -w /work --net host ubuntu sh
+docker run -it --rm -v ${PWD}:/work -w /work --net host ubuntu sh
 ```
 
+**for `windows`**
+```
+docker run -it --rm -v "%cd%":/work -w /work --net host ubuntu sh
+```
 ## Step 2: Install dependencies
 
 Since you are using Ubuntu, you need to install `curl` and `terraform`.
