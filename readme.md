@@ -11,14 +11,14 @@ cd terraform-with-shell
 
 Run the Docker image with the code on the Docker machine, using the `-v` argument to mount volumes. Enter the Docker machine.
 
-**for `linux`**
+**for `linux` and `powerShell`**
 ```
-docker run -it --rm -v ${PWD}:/work -w /work --net host ubuntu sh
+docker run -it --rm  -v ${PWD}:/work -w /work  alpine sh
 ```
 
-**for `windows`**
+**for `windows cmd`**
 ```
-docker run -it --rm -v "%cd%":/work -w /work --net host ubuntu sh
+docker run -it --rm -v "%cd%":/work -w /work ubuntu sh
 ```
 ## Step 2: Install dependencies
 
